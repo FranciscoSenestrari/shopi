@@ -1,41 +1,27 @@
 import type { MetaFunction } from "@remix-run/node";
+import { motion } from "framer-motion"
 
 export const meta: MetaFunction = () => {
   return [
     { title: "New Remix App" },
     { name: "description", content: "Welcome to Remix!" },
-  ];
-};
+  ]
+}
 
 export default function Index() {
   return (
     <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.8" }}>
-      <h1>Welcome to Remix</h1>
-      <ul>
-        <li>
-          <a
-            target="_blank"
-            href="https://remix.run/tutorials/blog"
-            rel="noreferrer"
-          >
-            15m Quickstart Blog Tutorial
-          </a>
-        </li>
-        <li>
-          <a
-            target="_blank"
-            href="https://remix.run/tutorials/jokes"
-            rel="noreferrer"
-          >
-            Deep Dive Jokes App Tutorial
-          </a>
-        </li>
-        <li>
-          <a target="_blank" href="https://remix.run/docs" rel="noreferrer">
-            Remix Docs
-          </a>
-        </li>
-      </ul>
+      <div className="bg-red-400 h-screen ">
+        <motion.div
+          whileHover={{ scale: 1.2 }}
+          whileTap={{ scale: 1.1 }}
+          drag="x"
+          dragConstraints={{ left: -100, right: 100 }}
+          className=""
+        >
+          <h1>hola</h1>
+        </motion.div>
+      </div>
     </div>
-  );
+  )
 }
