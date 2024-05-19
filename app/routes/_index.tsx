@@ -1,5 +1,6 @@
-import type { MetaFunction } from "@remix-run/node";
-import { motion } from "framer-motion"
+import type { MetaFunction } from "@remix-run/node"
+import { Link, Outlet } from "@remix-run/react"
+import PageTemplate from "~/src/components/PageTemplate"
 
 export const meta: MetaFunction = () => {
   return [
@@ -10,18 +11,11 @@ export const meta: MetaFunction = () => {
 
 export default function Index() {
   return (
-    <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.8" }}>
-      <div className="bg-red-400 h-screen ">
-        <motion.div
-          whileHover={{ scale: 1.2 }}
-          whileTap={{ scale: 1.1 }}
-          drag="x"
-          dragConstraints={{ left: -100, right: 100 }}
-          className=""
-        >
-          <h1>hola</h1>
-        </motion.div>
-      </div>
-    </div>
+    <PageTemplate>
+      <button>
+        <Link to="/galeria">INGRESAR A GALERIA</Link>
+      </button>
+      <Outlet />
+    </PageTemplate>
   )
 }
