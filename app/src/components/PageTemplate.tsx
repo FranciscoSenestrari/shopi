@@ -1,5 +1,5 @@
-import { ComponentProps, PropsWithChildren } from "react"
-import { cn } from "~/utils"
+import { ComponentProps, PropsWithChildren } from "react";
+import { cn } from "~/utils";
 
 function PageTemplate({
   children,
@@ -7,11 +7,9 @@ function PageTemplate({
 }: PropsWithChildren & ComponentProps<"div">) {
   return (
     <div className="w-screen h-screen">
-      <div className={cn("w-full h-full bg-red-200", className)}>
-        {children}
-      </div>
+      <div className={cn("w-full h-full ", className)}>{children}</div>
     </div>
-  )
+  );
 }
 
-export default PageTemplate
+export default PageTemplate;
